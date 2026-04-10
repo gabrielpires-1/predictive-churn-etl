@@ -1,4 +1,4 @@
-# Predictive Churn ETL
+# Predictive Churn ETL - Projeto da cadeira Big data
 
 Pipeline ETL para ingestão, tratamento e agregação de dados de churn de clientes de telecomunicações, com organização em camadas analíticas (`bronze`, `silver` e `gold`) para apoiar análises exploratórias, indicadores de risco e futuras iniciativas de modelagem preditiva.
 
@@ -29,25 +29,39 @@ Os dados utilizados neste projeto têm como origem o dataset público do Kaggle:
 - KaggleHub
 - ipywidgets
 
-## Estrutura do repositório
+## Estrutura do reposit�rio (Arq)
 
 ```text
 predictive-churn-etl/
 |-- bronze/
-|-- silver/
+|-- dados/
+|   `-- README.md
+|-- documentacao/
+|   |-- architecture-diagram.mmd
+|   |-- catalogo-de-artefatos.md
+|   |-- guia-execucao.md
+|   |-- pipeline-diagram.mmd
+|   `-- README.md
 |-- gold/
+|-- notebooks/
+|   |-- 01_ingestion.ipynb
+|   |-- 02_transformation.ipynb
+|   `-- 03_gold_aggregation.ipynb
+|-- silver/
 |-- src/
 |   |-- 01_ingestion.ipynb
 |   |-- 02_transformation.ipynb
 |   `-- 03_gold_aggregation.ipynb
+|-- LICENSE
 |-- requirements.txt
 `-- README.md
 ```
 
 ## Objetivo
 
-Construir uma base confiável para análise de churn, permitindo:
+Construir uma base confiável para análise de churn, permitindo a:
 
 - rastreabilidade entre os estágios de processamento;
 - padronização dos dados para consumo analítico;
 - geração de visões consolidadas para suporte à tomada de decisão.
+
