@@ -1,4 +1,4 @@
-# Predictive Churn ETL
+# Predictive Churn ETL - Projeto da cadeira Big data
 
 Pipeline ETL para ingestão, tratamento e agregação de dados de churn de clientes de telecomunicações, com organização em camadas analíticas (`bronze`, `silver` e `gold`) para apoiar análises exploratórias, indicadores de risco e futuras iniciativas de modelagem preditiva.
 
