@@ -28,6 +28,9 @@ Os dados utilizados neste projeto têm como origem o dataset público do Kaggle:
 - PyArrow
 - KaggleHub
 - ipywidgets
+- Matplotlib
+- Seaborn
+  
 
 ## Estrutura do reposit�rio (Arq)
 
