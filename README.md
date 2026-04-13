@@ -8,7 +8,7 @@ Este projeto foi estruturado para processar dados de cancelamento de clientes de
 
 - `bronze`: armazenamento da base original ingerida.
 - `silver`: dados tratados e padronizados para consumo analítico.
-- `gold`: saídas agregadas e visões de negócio, como resumo de churn e matriz de risco.
+- `gold`: saídas agregadas e visões de negócio, como features do customer, resumo de churn e referência do churn.
 
 O fluxo foi desenvolvido em notebooks para facilitar inspeção, transformação e evolução do processo ao longo das etapas do pipeline.
 
