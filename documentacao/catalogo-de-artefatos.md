@@ -31,12 +31,12 @@ Contem os dados tratados, com ajustes de tipos, limpeza, validações e preparac
 ## Camada Gold
 
 ### Arquivos
-
+- `gold/customer_features.parquet`
+- `churn_reference.parquet`
 - `gold/churn_summary.parquet `
-- `gold/risk_matrix.parquet`
 ### Descricao
 
-Agrupa os produtos finais do pipeline, orientados a leitura de negocio e apoio a visualizacoes ou modelos futuros.
+Agrupa os produtos finais do pipeline, o customer_features inclui as categorias que serão utilizadas para a clusterização, o churn_reference traz uma referência da distribuição de churn, e o churn_summary traz um resumo de informações por tenure_group e Contract, também como referência.
 
 ## Notebooks do projeto
 
