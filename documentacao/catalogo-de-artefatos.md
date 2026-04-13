@@ -36,7 +36,7 @@ Contem os dados tratados, com ajustes de tipos, limpeza, validações e preparac
 - `gold/churn_summary.parquet `
 ### Descricao
 
-Agrupa os produtos finais do pipeline, o customer_features inclui as categorias que serão utilizadas para a clusterização, o churn_reference traz uma referência da distribuição de churn, e o churn_summary traz um resumo de informações por tenure_group e Contract, também como referência.
+Agrupa os produtos finais do pipeline, o customer_features inclui as categorias que serão utilizadas para a clusterização, o churn_reference traz uma referência da distribuição de churn, inclusive com o Customer ID pro Churn, e o churn_summary traz um resumo descritivo por tenure_group e Contract.
 
 ## Notebooks do projeto
 
