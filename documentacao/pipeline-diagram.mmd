@@ -7,9 +7,11 @@ flowchart LR
     D[src/02_transformation.ipynb<br/>Etapa 2: Transformacao<br/>Limpeza, tipagem e padronizacao]
     E[silver/telco_churn_silver.parquet<br/>Camada Silver<br/>Dados tratados para analise]
 
-    F[src/03_gold_aggregation.ipynb<br/>Etapa 3: Agregacao<br/>Calculo de indicadores e visoes de negocio]
-    G[gold/churn_summary.parquet<br/>Produto Gold 1<br/>Resumo consolidado de churn]
-    H[gold/risk_matrix.parquet<br/>Produto Gold 2<br/>Matriz de risco por perfil]
+    F[src/03_gold_aggregation.ipynb<br/>Etapa 3: Gold<br/>Selecao de features e agregacoes]
+    G[gold/customer_features.parquet<br/>Produto Gold 1<br/>27 features numericas para clustering]
+    H[gold/churn_reference.parquet<br/>Produto Gold 2<br/>Mapa customerID para Churn]
+    I[gold/churn_summary.parquet<br/>Produto Gold 3<br/>Resumo descritivo por tenure e contrato]
+
 
     I[Consumo analitico<br/>Exploracao analitica e base para  futuros dashboards e ML]
 
