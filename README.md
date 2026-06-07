@@ -89,3 +89,41 @@ Vale notar também que os grupos com mais fibra óptica costumam ser justamente 
 
 No fim das contas, a leitura é bem direta: o cliente mais perigoso é o recém-chegado no mês a mês pagando uma conta alta, e o caminho mais óbvio para segurar gente é puxar esse pessoal para contratos mais longos.
 
+### Agrupando os clientes por perfil
+
+Além desse corte por contrato e tempo de casa, a gente foi um passo além: usou um algoritmo de agrupamento (K-Means) para deixar os próprios dados juntarem os clientes por semelhança de perfil, sem dizer pra ele nada sobre quem cancelou ou não. Saíram cinco grupos bem diferentes entre si — e o mais interessante é que a taxa de churn muda muito de um pro outro, indo de uns 5% num grupo bem fiel até quase 56% no grupo mais arriscado. São esses grupos que sustentam as respostas das perguntas mais abaixo.
+
+| Grupo | Clientes | Churn | Como é esse cliente |
+|---|---|---|---|
+| 3 | 1.130 | 5,4% | DSL, contrato longo, muita gente com família e bastante serviço de suporte |
+| 1 | 1.523 | 7,4% | clientes sem internet, conta baixa (~R$21) |
+| 0 | 1.206 | 20,3% | fibra, contrato longo e conta alta (~R$103) |
+| 2 | 1.288 | 30,9% | DSL no mês a mês, maioria morando sozinha |
+| 4 | 1.885 | 55,8% | fibra, mês a mês, conta alta, pouco suporte e mais idosos |
+
+### As perguntas que a gente respondeu
+
+Com os grupos em mãos, conseguimos responder quatro perguntas que guiaram o projeto.
+
+**1. Os grupos que mais cancelam concentram clientes idosos? A idade muda o jogo do churn?**
+
+Existe uma relação, sim, mas a idade sozinha não conta a história toda. O grupo que mais cancela (quase 56%) é também o que tem mais idosos — perto de 30% deles, contra menos de 9% nos grupos mais fiéis. Só que, olhando de perto, o que realmente derruba esse grupo é o pacote inteiro: é quase todo mundo no mês a mês, com fibra, pagando por electronic check, com pouco suporte e pouco tempo de casa. Ou seja, o idoso parece ser mais sensível a esse cenário de pouca estabilidade e pouco apoio — quando ele tem contrato mais firme e suporte por trás, a chance de sair cai bastante.
+
+**2. Ter cônjuge e/ou dependentes empurra o cliente para os grupos de menor churn?**
+
+Sim, e essa foi uma das relações mais fortes que apareceram. Quem tem cônjuge e dependentes cancela em torno de 14%; já quem mora sozinho e sem ninguém dependente pula pra 34%. Isso se reflete direto nos grupos: os mais fiéis são justamente os mais "familiares" — no grupo de menor churn, três em cada quatro clientes têm família. A correlação entre "ter família" e a taxa de cancelamento ficou em −0,75, que é considerada alta: quanto mais família, menos churn.
+
+**3. O tipo de internet contratada diferencia os grupos e mexe no churn?**
+
+Sim — e esse acabou sendo o fator que mais separou os grupos, a ponto de cada um ser quase "puro" num tipo de internet. O churn sobe junto com o tipo (e o preço) do serviço: quem não tem internet cancela só 7,4%, quem tem DSL 19% e quem tem fibra 41,9%. Quer dizer, o cliente de fibra cancela quase 6× mais que quem não tem internet, e é também quem paga mais caro (média de R$91 na fibra, contra R$58 na DSL e R$21 sem internet). Mas tem um porém importante: o tipo de internet sozinho não decide nada — a mesma DSL aparece tanto no grupo mais fiel quanto num de churn alto. E um detalhe curioso: dentro de cada tipo, quem cancela até paga um pouco menos que quem fica. Então o problema da fibra parece estar mais na percepção de custo-benefício da categoria do que no valor exato da conta.
+
+**4. Existe algum grupo no mês a mês que mesmo assim segura o churn lá embaixo?**
+
+Pronto, não existe — nenhum grupo junta "muito contrato mensal" com "churn baixo". O contrato é disparado o que mais separa quem fica de quem sai: contrato de dois anos cancela só 2,8%, de um ano 11,3%, e o mês a mês 42,7%. Não por acaso, os dois grupos com mais gente no mês a mês são justamente os que mais cancelam. Ainda assim, dentro do próprio mês a mês dá pra reduzir bastante o risco:
+
+- **Tempo de casa**: nos primeiros meses o churn beira os 51%, mas vai caindo e chega a 26% entre os clientes mais antigos.
+- **Suporte técnico**: com suporte ativo cai pra 30,7% (contra 45,2% sem), e quem tem três ou mais serviços de suporte cai pra 23,4%.
+- **Juntando tudo**: um cliente mês a mês com mais de quatro anos de casa e suporte ativo cancela só 10,9% — quase no nível de quem assinou contrato anual.
+
+No fim, a real é que não dá pra "consertar" o contrato mensal, mas dá pra deixar ele bem menos arriscado com tempo de casa e suporte por trás.
+
